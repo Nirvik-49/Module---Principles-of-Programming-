@@ -1,0 +1,33 @@
+START
+
+Open testInput.txt for reading
+
+IF file cannot be opened
+        Display "Error: Cannot open file testInput.txt"
+        Stop program
+    END IF
+
+Read number_of_customers from file
+    
+    Set heavyCount = 0
+    Set regularCount = 0
+    Set lightCount = 0
+
+FOR i = 1 to number_of_customers
+        Read customer_number, previous_reading, current_reading
+        unitsUsed = current reading - previous reading
+
+IF unitsUsed > 1000
+        heavyCount = heavyCount + 1
+    ELSE IF unitsUsed >= 500
+        regularCount = regularCount + 1
+    ELSE
+        lightCount = lightCount + 1
+END FOR
+
+Display heavyCount
+Display regularCount
+Display lightCount
+
+Close file
+END
